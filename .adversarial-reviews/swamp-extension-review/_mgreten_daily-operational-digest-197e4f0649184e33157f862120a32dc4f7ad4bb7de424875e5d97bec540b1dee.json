@@ -1,0 +1,82 @@
+{
+  "extension": "@mgreten/daily-operational-digest",
+  "version": "2026.08.23.1",
+  "reviewedAt": "2026-08-23T18:42:35Z",
+  "dimensions": [
+    {
+      "id": "credentials-secrets",
+      "verdict": "na",
+      "note": "No credentials or integrations; deterministic leakage validation rejects sensitive Better Stack evidence before persistence."
+    },
+    {
+      "id": "logging-quality",
+      "verdict": "pass",
+      "note": "All model methods emit structured entry and completion logs containing only bounded method and resource identifiers."
+    },
+    {
+      "id": "error-handling",
+      "verdict": "pass",
+      "note": "Strict parsing and fail-closed evidence validation complete before writes."
+    },
+    {
+      "id": "testing-completeness",
+      "verdict": "pass",
+      "note": "Synthetic tests cover generic reduction, persistence and logging, leakage rejection, compatibility adapters, active feedback-batch input, and available Railway failure evidence."
+    },
+    {
+      "id": "idempotency-resilience",
+      "verdict": "pass",
+      "note": "Pure deterministic reducers use stable caller-supplied resource identifiers and perform one bounded write."
+    },
+    {
+      "id": "api-contracts",
+      "verdict": "na",
+      "note": "No external API calls."
+    },
+    {
+      "id": "resource-management",
+      "verdict": "na",
+      "note": "No external connections, files, subprocesses, or handles."
+    },
+    {
+      "id": "published-surface-hygiene",
+      "verdict": "pass",
+      "note": "One model entrypoint is published; compatibility contracts are explicit and contain no database or reader runtime."
+    },
+    {
+      "id": "schema-strictness",
+      "verdict": "pass",
+      "note": "Generic, compatibility, and persisted resource boundaries are strict, bounded, and recommendation-only."
+    },
+    {
+      "id": "lifetime-gc",
+      "verdict": "pass",
+      "note": "Digest and pulse resources use a 30-day lifetime and bounded garbage collection."
+    },
+    {
+      "id": "crud-completeness",
+      "verdict": "na",
+      "note": "Persistence-only deterministic builder, not a CRUD lifecycle model."
+    },
+    {
+      "id": "preflight-checks",
+      "verdict": "na",
+      "note": "No operational or external mutation."
+    },
+    {
+      "id": "instance-names",
+      "verdict": "pass",
+      "note": "Caller-provided digest and pulse identifiers are bounded and validated before use as resource names."
+    },
+    {
+      "id": "data-access",
+      "verdict": "na",
+      "note": "No stored-state reads or direct repository access."
+    },
+    {
+      "id": "version-upgrades",
+      "verdict": "pass",
+      "note": "An additive identity upgrade retains historical digest and pulse resource contracts and compatibility methods."
+    }
+  ]
+}
